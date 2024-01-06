@@ -1,3 +1,4 @@
+import NewProduct from "./components/NewProduct";
 import ProductForm from "./components/ProductForm";
 import Products from "./components/Products";
 
@@ -29,9 +30,15 @@ function App() {
       date:new Date(2021,8,21)
     }
   ]
+
+  function printProductData(data)
+  {
+    console.log('I am inside App.js');
+    console.log(data);
+  }
   return (
     <div>
-      <ProductForm></ProductForm>
+      <NewProduct getDataFromChild = {printProductData}></NewProduct>
       <Products items = {products}></Products>
     </div>
   );

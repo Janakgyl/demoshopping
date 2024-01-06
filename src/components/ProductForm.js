@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ProductForm.css";
 
-function ProductForm() {
+function ProductForm(props) {
   // handling multiple states using useEffect
   // const [productFullInput, setProductFullInput] = useState({
   //     title:'',
@@ -31,7 +31,9 @@ function ProductForm() {
         date:newDate
     }
 
-    console.log(newProduct);
+    // console.log(newProduct);
+    props.onSaveProduct(newProduct);
+
     setTitle('');
     setDate('');
   }
